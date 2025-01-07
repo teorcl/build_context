@@ -5,6 +5,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    final mediaQuery = context.findAncestorWidgetOfExactType<MediaQuery>();
+    final screenSize = mediaQuery!.data.size;
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Page'),
+      ),
+      body: Center(
+        child: Text('${screenSize.width} x ${screenSize.height}'),
+      ),
+    );
   }
 }
